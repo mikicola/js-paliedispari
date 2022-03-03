@@ -30,6 +30,7 @@ else{
 
 
 // alternativa con function
+/*
 let parola = prompt("scrivi qui una parola, ti dirò se è palindroma");
 const divParola = document.querySelector('.parola')
 
@@ -55,7 +56,7 @@ function palindroma (parola){
         return false;
     }
 }
-
+*/
 
 
 
@@ -76,21 +77,53 @@ Dichiariamo chi ha vinto.
 // sommare i due numeri 
 // numero pari o dispari?
 
-/*
-const btnPari = document.querySelector('.btn-pari');
-const btnDispari = document.querySelector('.btn-dispari');
 
-btnPari.onclick = function(){
-    alert('hai scelto Pari')
-    }
+// const btnPari = document.querySelector('.btn-pari');
+// const btnDispari = document.querySelector('.btn-dispari');
 
-btnDispari.onclick = function(){
-    alert('hai scelto Dispari')
-    }
+// btnPari.onclick = function(){
+//     alert('hai scelto Pari')
+// }
 
-function numeri() {
-    let numeroUtente = parseInt(prompt('dimmi un numero da 1 a 5'))
-    console.log(numeroUtente)
-    
+// btnDispari.onclick = function(){
+//     alert('hai scelto Dispari')
+// }
+
+const pariOdispari = prompt('Scegli: pari o dispari?').toLowerCase();
+const numeroUtente = parseInt(prompt('dimmi un numero da 1 a 5'));
+const numeroRandom = functionNumeroRandom(1, 5);
+const somma = numeroUtente + numeroRandom;
+
+console.log('hai scelto ' + (numeroUtente));
+console.log('il computer ha scelto ' + (numeroRandom));
+console.log(somma);
+
+if (pari (somma)){
+    result="pari";
 }
-*/
+else{
+    result="dispari";
+}
+
+if(pariOdispari == result){
+    console.log('hai vinto')
+}
+else{
+    console.log('hai perso')
+}
+
+
+
+function functionNumeroRandom(min, max){
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+function pari(numero){
+    if (numero % 2 == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
